@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VidyaVriksh - Educational Content Management Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Manrope', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#2563eb',    // Educational blue
+                        secondary: '#059669',  // Growth green
+                        accent: '#7c3aed',     // Royal purple
+                        light: '#f8fafc',
+                        dark: '#0f172a'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Manrope', sans-serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(120deg, #f0f9ff 0%, #e0f2fe 100%);
+        }
+        .dark .gradient-bg {
+            background: linear-gradient(120deg, #0f172a 0%, #1e293b 100%);
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+        }
+        .feature-icon {
+            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
+    <!-- Theme Toggle -->
+    <button id="themeToggle" class="fixed top-4 right-4 p-2 rounded-full bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors shadow-lg">
+        <svg class="w-6 h-6 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+        </svg>
+        <svg class="w-6 h-6 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707"></path>
+        </svg>
+    </button>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen gradient-bg flex items-center justify-center px-4 py-20">
+        <div class="max-w-6xl mx-auto text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">
+                Transform Your Educational Content Management
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
+                VidyaVriksh helps educators and students organize, share, and track educational content seamlessly through Telegram.
+            </p>
+            <a href="https://t.me/vidyavrikshbot" target="_blank" class="inline-flex items-center px-8 py-4 text-lg font-semibold text-white bg-primary rounded-xl hover:bg-blue-700 transition-colors duration-300 shadow-lg hover:shadow-xl">
+                🎓 Start Teaching with VidyaVriksh
+            </a>
+            <div class="mt-12 relative">
+                <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-xl max-w-2xl mx-auto transform hover:scale-105 transition-transform duration-300">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-r from-primary to-accent flex items-center justify-center">
+                            <span class="text-white text-xl">📚</span>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold">VidyaVriksh</h3>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Course Preview</p>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="bg-gray-100 dark:bg-gray-700 rounded-lg p-4">
+                            <h4 class="font-medium mb-2">📚 Advanced Mathematics</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-300">Complete calculus course with video lectures, practice problems, and study materials</p>
+                            <div class="mt-3 flex space-x-2">
+                                <button class="px-4 py-2 bg-primary text-white rounded-lg text-sm">📥 Download Materials</button>
+                                <button class="px-4 py-2 bg-gray-200 dark:bg-gray-600 rounded-lg text-sm">👁️ Preview Course</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 px-4 bg-white dark:bg-gray-800">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">Educational Features</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-gray-50 dark:bg-gray-700 rounded-xl p-6 card-hover">
+                    <div class="text-3xl mb-4">📚</div>
+                    <h3 class="text-xl font-semibold mb-2">Course Management</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Organize lectures, assignments, and study materials by subject</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-gray-50 dark:bg-gray-700 rounded-xl p-6 card-hover">
+                    <div class="text-3xl mb-4">📝</div>
+                    <h3 class="text-xl font-semibold mb-2">Assignment Tracking</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Monitor student progress and submission status</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-gray-50 dark:bg-gray-700 rounded-xl p-6 card-hover">
+                    <div class="text-3xl mb-4">🎥</div>
+                    <h3 class="text-xl font-semibold mb-2">Video Lectures</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Share and organize educational video content</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="bg-gray-50 dark:bg-gray-700 rounded-xl p-6 card-hover">
+                    <div class="text-3xl mb-4">📊</div>
+                    <h3 class="text-xl font-semibold mb-2">Progress Analytics</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Track student engagement and learning outcomes</p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="bg-gray-50 dark:bg-gray-700 rounded-xl p-6 card-hover">
+                    <div class="text-3xl mb-4">👥</div>
+                    <h3 class="text-xl font-semibold mb-2">Group Learning</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Facilitate collaborative learning environments</p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="bg-gray-50 dark:bg-gray-700 rounded-xl p-6 card-hover">
+                    <div class="text-3xl mb-4">📱</div>
+                    <h3 class="text-xl font-semibold mb-2">Mobile Access</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Access educational content on any device</p>
+                </div>
+
+                <!-- Feature 7 -->
+                <div class="bg-gray-50 dark:bg-gray-700 rounded-xl p-6 card-hover">
+                    <div class="text-3xl mb-4">🔍</div>
+                    <h3 class="text-xl font-semibold mb-2">Smart Search</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Quickly find specific topics and materials</p>
+                </div>
+
+                <!-- Feature 8 -->
+                <div class="bg-gray-50 dark:bg-gray-700 rounded-xl p-6 card-hover">
+                    <div class="text-3xl mb-4">📈</div>
+                    <h3 class="text-xl font-semibold mb-2">Performance Metrics</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Monitor and improve teaching effectiveness</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="py-20 px-4 bg-gray-50 dark:bg-gray-900">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">Getting Started</h2>
+            <div class="relative">
+                <!-- Timeline Line -->
+                <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-primary/20 dark:bg-primary/30"></div>
+                
+                <!-- Step 1 -->
+                <div class="relative mb-16">
+                    <div class="flex items-center">
+                        <div class="w-1/2 pr-12 text-right">
+                            <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg">
+                                <div class="text-3xl mb-4">1</div>
+                                <h3 class="text-xl font-semibold mb-2">Create Your Course</h3>
+                                <p class="text-gray-600 dark:text-gray-300">Start with /createcourse and set up your educational content</p>
+                            </div>
+                        </div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold text-xl">
+                            1
+                        </div>
+                        <div class="w-1/2 pl-12"></div>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="relative mb-16">
+                    <div class="flex items-center">
+                        <div class="w-1/2 pr-12"></div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold text-xl">
+                            2
+                        </div>
+                        <div class="w-1/2 pl-12">
+                            <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg">
+                                <div class="text-3xl mb-4">2</div>
+                                <h3 class="text-xl font-semibold mb-2">Add Learning Materials</h3>
+                                <p class="text-gray-600 dark:text-gray-300">Upload lectures, assignments, and study resources</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="relative mb-16">
+                    <div class="flex items-center">
+                        <div class="w-1/2 pr-12 text-right">
+                            <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg">
+                                <div class="text-3xl mb-4">3</div>
+                                <h3 class="text-xl font-semibold mb-2">Organize Content</h3>
+                                <p class="text-gray-600 dark:text-gray-300">Structure your materials for optimal learning flow</p>
+                            </div>
+                        </div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold text-xl">
+                            3
+                        </div>
+                        <div class="w-1/2 pl-12"></div>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="relative">
+                    <div class="flex items-center">
+                        <div class="w-1/2 pr-12"></div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold text-xl">
+                            4
+                        </div>
+                        <div class="w-1/2 pl-12">
+                            <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg">
+                                <div class="text-3xl mb-4">4</div>
+                                <h3 class="text-xl font-semibold mb-2">Engage Students</h3>
+                                <p class="text-gray-600 dark:text-gray-300">Share content and track student progress</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section class="py-20 px-4 bg-white dark:bg-gray-800">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">Perfect For Education</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Teachers -->
+                <div class="bg-gray-50 dark:bg-gray-700 rounded-xl p-8 card-hover">
+                    <div class="text-4xl mb-6">👩‍🏫</div>
+                    <h3 class="text-xl font-semibold mb-4">Teachers</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">Create and manage comprehensive course materials</p>
+                    <ul class="space-y-2 text-sm text-gray-500 dark:text-gray-400">
+                        <li>• Share lecture materials</li>
+                        <li>• Track assignments</li>
+                        <li>• Monitor progress</li>
+                    </ul>
+                </div>
+
+                <!-- Students -->
+                <div class="bg-gray-50 dark:bg-gray-700 rounded-xl p-8 card-hover">
+                    <div class="text-4xl mb-6">👨‍🎓</div>
+                    <h3 class="text-xl font-semibold mb-4">Students</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">Access and organize study materials efficiently</p>
+                    <ul class="space-y-2 text-sm text-gray-500 dark:text-gray-400">
+                        <li>• Access course content</li>
+                        <li>• Submit assignments</li>
+                        <li>• Track progress</li>
+                    </ul>
+                </div>
+
+                <!-- Institutions -->
+                <div class="bg-gray-50 dark:bg-gray-700 rounded-xl p-8 card-hover">
+                    <div class="text-4xl mb-6">🏫</div>
+                    <h3 class="text-xl font-semibold mb-4">Institutions</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">Manage entire educational programs</p>
+                    <ul class="space-y-2 text-sm text-gray-500 dark:text-gray-400">
+                        <li>• Course management</li>
+                        <li>• Student tracking</li>
+                        <li>• Performance analytics</li>
+                    </ul>
+                </div>
+
+                <!-- Online Educators -->
+                <div class="bg-gray-50 dark:bg-gray-700 rounded-xl p-8 card-hover">
+                    <div class="text-4xl mb-6">💻</div>
+                    <h3 class="text-xl font-semibold mb-4">Online Educators</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">Deliver digital learning experiences</p>
+                    <ul class="space-y-2 text-sm text-gray-500 dark:text-gray-400">
+                        <li>• Create courses</li>
+                        <li>• Engage students</li>
+                        <li>• Track outcomes</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="py-20 px-4 hero-gradient">
+        <div class="max-w-4xl mx-auto text-center text-white">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Transform Your Teaching Experience</h2>
+            <p class="text-xl mb-8 opacity-90">Join educators worldwide who are revolutionizing their teaching with VidyaVriksh</p>
+            <a href="https://t.me/vidyavrikshbot" target="_blank" class="inline-flex items-center px-8 py-4 text-lg font-semibold text-primary bg-white rounded-xl hover:bg-gray-100 transition-colors duration-300 shadow-lg hover:shadow-xl">
+                🎓 Start Teaching Today
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-4 bg-gray-900 text-gray-400">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Resources</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white transition-colors">Teacher's Guide</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Student FAQ</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">API Documentation</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Community</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white transition-colors">Teacher's Forum</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Student Community</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Discord Server</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Legal</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Cookie Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Support</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white transition-colors">Help Center</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Contact Support</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Feature Requests</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center pt-8 border-t border-gray-800">
+                <p>© 2024 · VidyaVriksh by Silent Programmer · Empowering Education</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+        });
+    </script>
+</body>
+</html>
